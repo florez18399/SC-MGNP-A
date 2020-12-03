@@ -1,0 +1,74 @@
+<div class="container">
+  <form #form2="ngForm" (ngSubmit)="run(form2.value)">
+    <div class="form-row">
+      <div class="form-group col-3">
+        <label for="seed">Semilla</label>
+        <input type="text" class="form-control" id="seed" name="seed" ngModel placeholder="Xo">
+      </div>
+      <div class="form-group col-3">
+        <label for="k">k/t</label>
+        <input type="number" class="form-control" id="k" name="k" ngModel placeholder="k/t">
+      </div>
+
+      <div class="form-group col-3">
+        <label for="c">c</label>
+        <input type="number" class="form-control" id="c" name="c" ngModel placeholder="c">
+      </div>
+
+      <div class="form-group col-3">
+        <label for="g">g</label>
+        <input type="number" class="form-control" id="g" name="g" placeholder="g" ngModel>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-2"></div>
+      <div class="form-check col-4 form-group">
+        <input class="form-check-input" type="checkbox" value="" id="isClosedInterval" [(ngModel)]="isClosedInterval"
+               [ngModelOptions]="{standalone: true}">
+        <label class="form-check-label" for="isClosedInterval">
+          Intervalo cerrado
+        </label>
+      </div>
+      <div class="form-group col-4">
+        <label for="typeCongruential">Tipo</label>
+        <select id="typeCongruential" class="form-control" [(ngModel)]="typeCongruential"
+                [ngModelOptions]="{standalone: true}">
+          <option selected>Lineal</option>
+          <option>Multiplicativo</option>
+        </select>
+      </div>
+      <div class="col-2"></div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-12" style="text-align: center">
+        <input class="btn btn-outline-dark btn-success" style="color: aliceblue" type="submit" value="Generar">
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<div class="row">
+  <div class="table-wrapper-scroll-y my-custom-scrollbar col-12">
+    <table class="table-success table table-bordered table-striped mb-0">
+      <thead>
+      <tr>
+        <th scope="col">i</th>
+        <th scope="col">Xi</th>
+        <th scope="col">Ri</th>
+        <th scope="col">Ni</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of ris; index as i">
+        <th scope="row">{{i}}</th>
+        <td>{{xis[i]}}</td>
+        <td>{{ris[i]}}</td>
+        <td>{{nis[i]}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

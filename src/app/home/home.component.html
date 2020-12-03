@@ -1,0 +1,23 @@
+<div class="container-fluid" style="text-align: center">
+  <h1>SIMULACIÓN POR COMPUTADORES</h1>
+  <h2>MÉTODOS DE GENERACIÓN DE NÚMEROS ALEATORIOS</h2>
+</div>
+<hr>
+<div class="container-fluid " >
+  <div class="row">
+    <div class="col-2 " >
+      <ul class="list-group">
+        <a routerLink="./meanSquares"><li class="list-group-item list-group-item-success">Cuadrados medios</li></a>
+        <a routerLink="./congruential"><li class="list-group-item list-group-item-success">Congruenciales</li></a>
+        <a routerLink="./normalDist"><li class="list-group-item list-group-item-success">Distribución normal</li></a>
+        <a routerLink="./uniformDist"><li class="list-group-item list-group-item-success">Distribución uniforme</li></a>
+      </ul>
+    </div>
+    <div class="col-8">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-2">
+      <app-ranges></app-ranges>
+    </div>
+  </div>
+</div>

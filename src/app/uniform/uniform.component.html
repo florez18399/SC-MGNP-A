@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="container-fluid">
+    <form #form4="ngForm" (ngSubmit)="run(form4.value)">
+      <div class="form-row">
+        <div class="form-group col-1">
+        </div>
+        <div class="form-group col-5">
+          <label style="font-size: 13px" for="quant">Cantidad de números a generar</label>
+          <input type="number" class="form-control" id="quant" name="quant" ngModel placeholder="Cantidad">
+        </div>
+        <div class="form-group col-5">
+          <label style="font-size: 13px" for="intervals">Cantidad de intervalos</label>
+          <input type="number" class="form-control" id="intervals" name="intervals" ngModel placeholder="intervals">
+        </div>
+        <div class="form-group col-1">
+        </div>
+      </div>
+      <div class="form-group col-12" style="text-align: center">
+        <input class="btn btn-outline-dark btn-success" style="color: aliceblue" type="submit" value="Generar">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <div class="row">
+      <div class="table-wrapper-scroll-y my-custom-scrollbar col-12">
+        <table class="table-success table table-bordered table-striped mb-0">
+          <thead>
+          <tr>
+            <th scope="col">i</th>
+            <th scope="col">Ri</th>
+            <th scope="col">Ni</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of ris; index as i">
+            <th scope="row">{{i}}</th>
+            <td>{{ris[i]}}</td>
+            <td>{{nis[i]}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="container-fluid">
+      <canvas id="diagBarras">{{chart}}</canvas>
+    </div>
+
+    <div class="container-fluid">
+      <h1>Intervalos</h1>
+      <ul *ngFor="let range of ranges">
+        {{range.min}}  ,  {{range.max}}
+      </ul>
+    </div>
+  </div>
+</div>

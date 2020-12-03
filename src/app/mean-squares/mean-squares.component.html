@@ -1,0 +1,43 @@
+<form #f="ngForm" (ngSubmit)="run(f.value)">
+  <div class="form-row">
+    <div class="form-group col-4">
+      <label for="seed">Ingresa la semilla para iniciar</label>
+      <input type="text" class="form-control" id="seed" name="seed" ngModel placeholder="Semilla">
+    </div>
+    <div class="form-group col-4">
+      <label for="quant">Cantidad de números a generar</label>
+      <input type="number" class="form-control" id="quant" name="quant" ngModel placeholder="Cantidad">
+    </div>
+
+    <div class="form-group col-4">
+      <label for="quant">Tamaño de los números(k)</label>
+      <input type="number" class="form-control" id="k" name="k" ngModel placeholder="k">
+    </div>
+    <div class="form-group col-12" style="text-align: center">
+      <input class="btn btn-outline-dark btn-success" style="color: aliceblue" type="submit" value="Generar">
+    </div>
+  </div>
+</form>
+
+<div class="row">
+  <table class="table-success table">
+    <thead>
+    <tr>
+      <th scope="col">i</th>
+      <th scope="col">Xi</th>
+      <th scope="col">Ri</th>
+      <th scope="col">Ni</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of ris; index as i">
+      <th scope="row">{{i}}</th>
+      <td>{{xis[i]}}</td>
+      <td>{{ris[i]}}</td>
+      <td>{{nis[i]}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
